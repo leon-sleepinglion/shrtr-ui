@@ -203,7 +203,7 @@ class App extends Component {
 
       message.success(`Location ${location.name} has been added`)
     } else {
-      message.success(`Location ${location.name} has already added into your list`)
+      message.warning(`Location ${location.name} has already added into your list`)
     }
   }
 
@@ -281,6 +281,9 @@ class App extends Component {
         this.updateMapMarker(map, group, lat, long, 15)
         this.setState({ listOfManeuver: [] })
         this.setState({ listOfSelectedLocations: [] })
+        this.setState({ planDistance: null})
+        this.setState({ planTime: null})
+        this.setState({ selectedLocation: {}})
       }
     })
   }
